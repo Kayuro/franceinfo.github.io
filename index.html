@@ -4,60 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🔴 Franceinfo en direct</title>
+<title>🔴 Franceinfo Live</title>
 
 <meta property="og:title" content="🔴 Franceinfo en direct">
-<meta property="og:description" content="Regardez franceinfo en direct - actualités en continu">
-<meta property="og:type" content="video.other">
-<meta property="og:url" content="https://kayuro.github.io/franceinfo.github.io/">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Franceinfo.svg/512px-Franceinfo.svg.png">
-
-<meta property="og:video" content="https://www.youtube.com/embed/Z-Nwo-ypKtM">
-<meta property="og:video:type" content="text/html">
-<meta property="og:video:width" content="1280">
-<meta property="og:video:height" content="720">
-
-<meta name="twitter:card" content="player">
+<meta property="og:description" content="Regarder franceinfo en direct">
+<meta property="og:image" content="https://www.franceinfo.fr/assets/common/images/logos/placeholder-4e7f49f2.png">
 
 <style>
 body {
-  margin:0;
-  background:#000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.live-badge {
-  position:absolute;
-  top:20px;
-  left:20px;
-  background:red;
-  color:white;
-  padding:6px 12px;
-  font-weight:bold;
-  border-radius:6px;
-}
-
-iframe {
-  width:100%;
-  height:100%;
-  border:none;
+.player {
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
 </style>
 </head>
 
 <body>
 
-<div class="live-badge">🔴 EN DIRECT</div>
-
-<iframe 
-src="https://www.youtube.com/embed/live_stream?channel=UC0TTscKZ8kbfT6Fh4WQ7dWg"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
+<div class="player">
+  <iframe
+    src="https://www.dailymotion.com/embed/video/x7tgczh"
+    allowfullscreen
+    allow="autoplay; fullscreen"
+    style="width:100%;height:100%;border:none;">
+  </iframe>
+</div>
 
 </body>
 </html>
