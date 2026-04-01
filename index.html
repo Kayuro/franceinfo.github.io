@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Franceinfo Live</title>
+
+<title>🔴 Franceinfo Live</title>
+
 <meta property="og:title" content="🔴 Franceinfo en direct">
-<meta property="og:description" content="Ouvrir le direct TV franceinfo">
+<meta property="og:description" content="Regarder franceinfo en direct">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kayuro.github.io/franceinfo.github.io/">
 <meta property="og:image" content="https://www.franceinfo.fr/assets/common/images/logos/placeholder-4e7f49f2.png">
+
 <style>
 body{
 margin:0;
@@ -20,6 +22,7 @@ justify-content:center;
 align-items:center;
 min-height:100vh
 }
+
 .card{
 width:min(920px,92vw);
 background:#111822;
@@ -28,6 +31,7 @@ border-radius:18px;
 padding:24px;
 box-shadow:0 20px 60px rgba(0,0,0,.45)
 }
+
 .badge{
 display:inline-block;
 background:#ff2b2b;
@@ -37,15 +41,18 @@ padding:8px 14px;
 border-radius:10px;
 margin-bottom:18px
 }
+
 h1{
 margin:0 0 10px;
 font-size:32px
 }
+
 p{
 margin:0 0 20px;
 color:#c9d1d9;
 line-height:1.5
 }
+
 .frame{
 position:relative;
 width:100%;
@@ -54,42 +61,72 @@ border-radius:14px;
 overflow:hidden;
 background:#000
 }
+
 iframe{
 width:100%;
 height:100%;
 border:0
 }
-.actions{
-margin-top:18px;
+
+.controls{
+margin-top:15px;
 display:flex;
-gap:12px;
-flex-wrap:wrap
+gap:10px;
 }
-a.btn{
-text-decoration:none;
-color:#fff;
+
+button{
+border:none;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+.unmute{
 background:#1f6feb;
-padding:12px 16px;
-border-radius:12px;
-font-weight:700
+color:#fff;
 }
-a.btn.secondary{
-background:#222b36
+
+.mute{
+background:#222b36;
+color:#fff;
 }
 </style>
 </head>
+
 <body>
+
 <div class="card">
 <div class="badge">🔴 EN DIRECT</div>
+
 <h1>Franceinfo Live</h1>
-<p>Lecture dans le navigateur ci-dessous. Pour Discord, partage directement le lien YouTube officiel pour obtenir le meilleur résultat.</p>
+<p>Lecture automatique activée. Active le son si besoin.</p>
+
 <div class="frame">
-<iframe src="https://www.youtube-nocookie.com/embed/NG7ZX42nZKc" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture"></iframe>
+<iframe id="player"
+src="https://www.youtube-nocookie.com/embed/NG7ZX42nZKc?autoplay=1&mute=1&playsinline=1"
+allow="autoplay; encrypted-media; picture-in-picture"
+allowfullscreen>
+</iframe>
 </div>
-<div class="actions">
-<a class="btn" href="https://www.youtube.com/watch?v=NG7ZX42nZKc" target="_blank" rel="noopener noreferrer">Ouvrir sur YouTube</a>
-<a class="btn secondary" href="https://www.franceinfo.fr/en-direct/tv.html" target="_blank" rel="noopener noreferrer">Page officielle franceinfo</a>
+
+<div class="controls">
+<button class="unmute" onclick="setSound(true)">🔊 Activer le son</button>
+<button class="mute" onclick="setSound(false)">🔇 Couper le son</button>
 </div>
+
 </div>
+
+<script>
+function setSound(enable){
+const iframe = document.getElementById("player");
+if(enable){
+iframe.src = "https://www.youtube-nocookie.com/embed/NG7ZX42nZKc?autoplay=1";
+}else{
+iframe.src = "https://www.youtube-nocookie.com/embed/NG7ZX42nZKc?autoplay=1&mute=1";
+}
+}
+</script>
+
 </body>
 </html>
